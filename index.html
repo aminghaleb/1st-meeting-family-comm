@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برنامج التواصل الأسري الراشد | د. أمين رمضان</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', // Navy Blue
+                        secondary: '#f8fafc', // Off-White
+                        accent: '#38bdf8', // Light Blue for buttons
+                        'quad-a': '#3b82f6', // Blue (Analytical)
+                        'quad-b': '#10b981', // Green (Organized)
+                        'quad-c': '#ef4444', // Red (Emotional)
+                        'quad-d': '#eab308', // Yellow (Creative)
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Smooth Scrolling & Details Animations -->
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* Accordion Animation */
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-secondary text-slate-800 font-sans antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl text-primary leading-tight">بوصلة الأسرة</h1>
+                        <p class="text-xs text-slate-500">د. أمين رمضان</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#hero" class="text-slate-600 hover:text-primary font-semibold transition-colors duration-300">الرئيسية</a>
+                    <a href="#brain" class="text-slate-600 hover:text-primary font-semibold transition-colors duration-300">تشريح الضغط</a>
+                    <a href="#herrmann" class="text-slate-600 hover:text-primary font-semibold transition-colors duration-300">بوصلة التفكير</a>
+                    <a href="#solutions" class="text-slate-600 hover:text-primary font-semibold transition-colors duration-300">أدوات الحل</a>
+                    <a href="#training" class="text-slate-600 hover:text-primary font-semibold transition-colors duration-300">التدريب والواجبات</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-primary to-blue-900 text-white relative overflow-hidden">
+        <!-- Abstract Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-white/20 text-sm font-semibold tracking-wider mb-6 border border-white/30 backdrop-blur-sm">
+                اللقاء الأول | مايو 2026
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                برنامج التواصل الأسري الراشد
+                <span class="block text-accent mt-2">بوصلة الأسرة - فك شفرة الذات وإدارة الضغوط</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-lg md:text-xl text-blue-100 mx-auto mb-10 leading-relaxed">
+                اكتشف كيف يواجه دماغك الأزمات الاقتصادية والاجتماعية، وتعلم أدوات عملية لتحويل التحديات المربكة إلى مواقف قابلة للإدارة وتجنب الشخصنة.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#brain" class="bg-accent hover:bg-sky-400 text-slate-900 font-bold py-3 px-8 rounded-full shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    ابدأ الرحلة المعرفية
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: The Brain Under Stress -->
+    <section id="brain" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">أولاً: العلاقة بين الضغوط وردود الأفعال اللاواعية</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+                <p class="mt-4 text-slate-600 max-w-3xl mx-auto text-lg">ماذا يحدث في الدماغ وقت الأزمات؟ تشريح الضغط النفسي (مرحلة البقاء)</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-slate-700">عندما يشعر العقل بالتهديد (مثل غلاء المعيشة، متطلبات المدارس)، يتوقف التفكير المنطقي ويسيطر الانفعال، مما يفسر العصبية المفرطة. لتبسيط الأمر، ينقسم الدماغ وظيفياً في هذا السياق إلى قسمين:</p>
+                    
+                    <div class="bg-red-50 border-r-4 border-red-500 p-6 rounded-l-lg hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-red-700 mb-2"><i class="fa-solid fa-bell mr-2 ml-2"></i> اللوزة الدماغية (The Amygdala)</h3>
+                        <p class="text-slate-700">"جهاز الإنذار وحارس البقاء". رصد التهديدات. الدماغ لا يفرق بين "أسد مفترس" وبين "فاتورة كهرباء مضاعفة". كلاهما يمثل "تهديداً للبقاء".</p>
+                    </div>
+
+                    <div class="bg-blue-50 border-r-4 border-blue-500 p-6 rounded-l-lg hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-blue-700 mb-2"><i class="fa-solid fa-brain mr-2 ml-2"></i> القشرة الجبهية الأمامية (Prefrontal Cortex)</h3>
+                        <p class="text-slate-700">"المدير التنفيذي والعقل الراشد". المسؤولة عن التفكير المنطقي، حل المشكلات، والتحكم في الانفعالات. هي التي تقول: "دعونا نضع ميزانية".</p>
+                    </div>
+                    
+                    <!-- Image: Brain Functions -->
+                    <div class="w-full rounded-xl overflow-hidden shadow-md border border-slate-200">
+                        <img src="القشرة الجبهية واللوزة الدماغية.jpg" alt="القشرة الجبهية واللوزة الدماغية" class="w-full h-auto hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+
+                    <a href="https://youtu.be/w1dut3g6oDI" target="_blank" class="inline-flex items-center gap-2 text-accent hover:text-primary font-bold transition-colors mt-2">
+                        <i class="fa-brands fa-youtube text-2xl text-red-600"></i> شاهد فيديو يشرح وظائف اللوزة الدماغية والقشرة الجبهية
+                    </a>
+                </div>
+                
+                <!-- Stages Timeline -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-inner relative">
+                    <h3 class="text-2xl font-bold text-primary mb-6 text-center">مراحل استجابة الدماغ للأزمات</h3>
+                    
+                    <!-- Image: Brain Journey -->
+                    <div class="w-full rounded-xl overflow-hidden shadow-md border border-slate-200 mb-8 bg-white">
+                        <img src="رحلة الدماغ لمواجهة الضغط النفسي.jpg" alt="رحلة الدماغ لمواجهة الضغط النفسي" class="w-full h-auto hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+
+                    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+                        
+                        <!-- Stage 1 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-100 text-red-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">1</div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
+                                <h4 class="font-bold text-slate-800">إدراك الخطر</h4>
+                                <p class="text-sm text-slate-600">تتلقى اللوزة المعلومة (عجز مالي) فتعتبره تهديداً كارثياً.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Stage 2 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-orange-100 text-orange-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">2</div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
+                                <h4 class="font-bold text-slate-800">فيضان الهرمونات</h4>
+                                <p class="text-sm text-slate-600">إفراز الكورتيزول والأدرينالين. حالة الكر أو الفر.</p>
+                            </div>
+                        </div>
+
+                        <!-- Stage 3 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">3</div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border-2 border-red-200 bg-red-50 shadow-sm hover:shadow-md transition-all">
+                                <h4 class="font-bold text-red-700">الاستحواذ اللوزي (الأهم)</h4>
+                                <p class="text-sm text-slate-600">إطفاء القشرة الجبهية. غياب المنطق، صراخ، عصبية مفرطة.</p>
+                            </div>
+                        </div>
+
+                        <!-- Stage 4 -->
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-100 text-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">4</div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all">
+                                <h4 class="font-bold text-slate-800">التقييم المنطقي</h4>
+                                <p class="text-sm text-slate-600">محاولة اتخاذ قرار عقلاني ومدروس.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="https://youtu.be/J9Jc3-pTiTA" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-accent font-bold transition-colors">
+                            <i class="fa-brands fa-youtube text-red-600 text-xl"></i> شاهد رحلة الدماغ في مواجهة الضغط النفسي
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Herrmann Brain Dominance -->
+    <section id="herrmann" class="py-20 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">ثانياً: اختلاف أنماط التفكير وتجنب الشخصنة</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+                <p class="mt-4 text-slate-600 max-w-3xl mx-auto text-lg">
+                    نموذج بوصلة التفكير تحت الضغط (Hermann Brain Dominance Instrument). 
+                    <br><strong class="text-primary block mt-2 text-xl bg-blue-100 py-2 px-4 rounded-lg inline-block shadow-sm">القاعدة الذهبية: في أوقات الضغط الشديد، يتراجع الإنسان تلقائياً إلى "النمط المهيمن" لديه بشكل متطرف.</strong>
+                </p>
+            </div>
+
+            <div class="text-center mb-10">
+                <a href="https://youtu.be/_fc8G15VdV8" target="_blank" class="inline-flex items-center gap-2 text-primary hover:text-accent font-bold transition-colors">
+                    <i class="fa-brands fa-youtube text-red-600 text-xl"></i> شاهد سمات أنماط التفكير تحت الضغط
+                </a>
+            </div>
+
+            <!-- Image: Thinking Under Stress -->
+            <div class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden shadow-md border border-slate-200 mb-12 bg-white">
+                <img src="أنماط التفكير تحت الضغط 2.jpg" alt="أنماط التفكير تحت الضغط" class="w-full h-auto hover:scale-[1.02] transition-transform duration-500">
+            </div>
+
+            <!-- Herrmann Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                
+                <!-- Quadrant A -->
+                <div class="bg-white rounded-2xl shadow-lg border-t-8 border-quad-a p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 text-quad-a flex items-center justify-center text-2xl font-bold">A</div>
+                        <h3 class="text-2xl font-bold text-slate-800">النمط التحليلي (أزرق)</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 border-b pb-4">الموضوعي / الرقمي</p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-bolt text-yellow-500 ml-2"></i> تحت الضغط:</h4>
+                        <p class="text-slate-700 bg-slate-50 p-3 rounded">يتحول إلى آلة حاسبة بلا مشاعر، التركيز الحاد على الأرقام، لغة جافة، وتجاهل المشاعر. يبحث عن حل المشكلة بالحقائق.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-users text-quad-a ml-2"></i> حالة من الواقع: (أزمة المصروفات)</h4>
+                        <p class="text-sm text-slate-600">يلغي الزوج ميزانية الترفيه فوراً. تترجم الزوجة الموقف كـ"بخل"، بينما يرى هو أنه يحمي الأسرة من الانهيار المالي.</p>
+                    </div>
+                </div>
+
+                <!-- Quadrant D -->
+                <div class="bg-white rounded-2xl shadow-lg border-t-8 border-quad-d p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 text-quad-d flex items-center justify-center text-2xl font-bold">D</div>
+                        <h3 class="text-2xl font-bold text-slate-800">النمط الإبداعي (أصفر)</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 border-b pb-4">الشمولي / التخيلي</p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-bolt text-yellow-500 ml-2"></i> تحت الضغط:</h4>
+                        <p class="text-slate-700 bg-slate-50 p-3 rounded">ينسحب إلى الخيال، التشتت، تجنب المواجهة التفصيلية، اقتراح حلول غير واقعية، والهروب من الأزمة.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-users text-quad-d ml-2"></i> حالة من الواقع: (تراكم الديون)</h4>
+                        <p class="text-sm text-slate-600">الزوج يتجنب حساب الديون ويقترح مشروعاً بمخاطرة مالية. يراه الآخرون مستهتراً، بينما يرى طريقتهم "خانقة".</p>
+                    </div>
+                </div>
+
+                <!-- Quadrant B -->
+                <div class="bg-white rounded-2xl shadow-lg border-t-8 border-quad-b p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 text-quad-b flex items-center justify-center text-2xl font-bold">B</div>
+                        <h3 class="text-2xl font-bold text-slate-800">النمط التنفيذي (أخضر)</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 border-b pb-4">التنظيمي / التفصيلي</p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-bolt text-yellow-500 ml-2"></i> تحت الضغط:</h4>
+                        <p class="text-slate-700 bg-slate-50 p-3 rounded">يتحول إلى شرطي مرور مهووس بالسيطرة، التصلب، التوتر الشديد من الفوضى أو التغيير المفاجئ، وإطلاق الأحكام.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-users text-quad-b ml-2"></i> حالة من الواقع: (إدارة الوقت)</h4>
+                        <p class="text-sm text-slate-600">تعطل الخطة يفقد الأم أعصابها. يتهمها الباقون بـ "النكد"، بينما هي تشعر بانهيار الأمان المرتبط بـ "الخطة".</p>
+                    </div>
+                </div>
+
+                <!-- Quadrant C -->
+                <div class="bg-white rounded-2xl shadow-lg border-t-8 border-quad-c p-8 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-100 text-quad-c flex items-center justify-center text-2xl font-bold">C</div>
+                        <h3 class="text-2xl font-bold text-slate-800">النمط العاطفي (أحمر)</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4 border-b pb-4">الاجتماعي / الشعوري</p>
+                    <div class="mb-4">
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-bolt text-yellow-500 ml-2"></i> تحت الضغط:</h4>
+                        <p class="text-slate-700 bg-slate-50 p-3 rounded">يتحول إلى كتلة من الحساسية ولعب دور الضحية، البكاء، الشعور بالرفض، واستدعاء التضحيات السابقة.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2"><i class="fa-solid fa-users text-quad-c ml-2"></i> حالة من الواقع: (غياب التقدير)</h4>
+                        <p class="text-sm text-slate-600">تنفجر الأم باكية وتستدعي شعور المظلومية. هي لا تبحث عن حلول منطقية (A)، بل تبحث عن الاعتراف بمعاناتها.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Application Box -->
+            <div class="bg-primary text-white rounded-xl p-8 shadow-2xl relative overflow-hidden mb-10">
+                <i class="fa-solid fa-lightbulb absolute -left-10 -bottom-10 text-9xl text-white/10"></i>
+                <h3 class="text-2xl font-bold mb-4 relative z-10">آلية توظيف هذا التحليل</h3>
+                <ul class="space-y-4 relative z-10">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-accent mt-1"></i>
+                        <div>
+                            <strong class="text-accent">فك الشخصنة (De-personalization):</strong> إدراك أن جفاف الشخص ليس هجوماً، بل "نمط دفاعي" يعمل به دماغه.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-accent mt-1"></i>
+                        <div>
+                            <strong class="text-accent">استراتيجية التحدث بلغة النمط الآخر (Pacing and Leading):</strong>
+                            <ul class="list-disc list-inside pr-4 mt-2 text-blue-100 text-sm space-y-1">
+                                <li>لإقناع نمط (A): استخدم الأرقام ودراسة الجدوى.</li>
+                                <li>لتهدئة نمط (B): طمأنه بوجود "خطة بديلة".</li>
+                                <li>للوصول لحل مع نمط (C): ابدأ بتقدير المشاعر والجهد قبل الحل العملي.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="mt-6 relative z-10">
+                    <a href="https://youtu.be/N5MSUlcYvEU" target="_blank" class="inline-flex items-center gap-2 text-white hover:text-accent font-bold transition-colors">
+                        <i class="fa-brands fa-youtube text-red-500 text-xl"></i> شاهد تطبيق نموذج التفكير على حالات الواقع
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Placeholder: Application on Real Cases -->
+            <!-- Image: Application on Real Cases -->
+            <div class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden shadow-md border border-slate-200 mb-10 bg-white">
+                <img src="تطبيق نموذج التفكير على حالات أزمة من الواقع.jpg" alt="تطبيق نموذج التفكير على حالات أزمة من الواقع" class="w-full h-auto hover:scale-[1.02] transition-transform duration-500">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 3: Solutions & NLP Reframing -->
+    <section id="solutions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">ثالثاً: صندوق أدوات العقل الراشد</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+                <p class="mt-4 text-slate-600 max-w-3xl mx-auto text-lg">
+                    الهدف: إيقاف "الاستحواذ اللوزي" وإعادة ضخ الدم إلى "القشرة الجبهية الأمامية" ليعود العقل الراشد للعمل.
+                </p>
+            </div>
+
+            <!-- Tool 1: Breathing -->
+            <div class="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl p-8 mb-12 shadow-sm border border-emerald-100">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <div class="w-32 h-32 bg-emerald-500 text-white rounded-full flex items-center justify-center text-4xl font-bold mx-auto mb-4 shadow-lg shadow-emerald-200">4-7-8</div>
+                        <h3 class="text-2xl font-bold text-emerald-800">التنفس الاسترخائي</h3>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-slate-700 mb-4 text-lg">بمثابة "زر إعادة الضبط" الفسيولوجي. إطالة وقت الزفير يحفز العصب الحائر ويُرسل إشارة فورية للدماغ بخفض مستويات الكورتيزول.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow text-center border-t-4 border-emerald-300">
+                                <h4 class="font-bold text-emerald-700">شهيق (4 ثوانٍ)</h4>
+                                <p class="text-sm text-slate-500">من الأنف، تمدد البطن.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow text-center border-t-4 border-emerald-500">
+                                <h4 class="font-bold text-emerald-700">احتفاظ (7 ثوانٍ)</h4>
+                                <p class="text-sm text-slate-500">حبس النفس لتشبع الأكسجين.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow text-center border-t-4 border-emerald-700">
+                                <h4 class="font-bold text-emerald-700">زفير (8 ثوانٍ)</h4>
+                                <p class="text-sm text-slate-500">ببطء من الفم، انقباض البطن.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 2: Reframing -->
+            <div class="mb-12">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-2"><i class="fa-solid fa-camera-rotate text-accent ml-2"></i> تقنية "إعادة التأطير" (Reframing)</h3>
+                        <p class="text-slate-600">أداة من البرمجة اللغوية العصبية لتغيير "العدسة" أو الإطار الذي نرى من خلاله الحدث لتخفيف الحدة الانفعالية.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                         <a href="https://youtu.be/Kb2C862FdDE" target="_blank" class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 font-bold transition-colors">
+                            <i class="fa-brands fa-youtube text-xl"></i> شرح التقنية
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Placeholder: Types of Reframing -->
+                <!-- Image: Types of Reframing -->
+                <div class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden shadow-md border border-slate-200 mb-10 bg-white">
+                    <img src="تقنية إعادة التأطير.jpg" alt="تقنية إعادة التأطير" class="w-full h-auto hover:scale-[1.02] transition-transform duration-500">
+                </div>
+
+                <div class="flex justify-between items-center mb-6 mt-12 border-t border-slate-100 pt-8">
+                    <h3 class="text-xl font-bold text-slate-800">تطبيقات واقعية من الحياة</h3>
+                    <a href="https://youtu.be/azVtY2lJYFI" target="_blank" class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 font-bold transition-colors">
+                        <i class="fa-brands fa-youtube text-xl"></i> تطبيقات عملية
+                    </a>
+                </div>
+
+                <!-- Image Placeholder: Practical Applications -->
+                <!-- Image: Practical Applications -->
+                <div class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden shadow-md border border-slate-200 mb-8 bg-white">
+                    <img src="إعادة التأطير - تطبيقات عملية.jpg" alt="إعادة التأطير - تطبيقات عملية" class="w-full h-auto hover:scale-[1.02] transition-transform duration-500">
+                </div>
+
+                <!-- Real Life Cases Accordions -->
+                <div class="space-y-4">
+                    
+                    <!-- Case 1 -->
+                    <details class="bg-white rounded-xl shadow-sm border border-slate-200 group">
+                        <summary class="p-6 font-bold text-lg text-slate-800 hover:text-primary transition-colors flex justify-between items-center">
+                            <span>1. الموقف: الزوج الصامت أو المنعزل</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-slate-400"></i>
+                            </span>
+                        </summary>
+                        <div class="p-6 pt-0 text-slate-700 border-t border-slate-100 mt-2 space-y-4">
+                            <p><strong>الحدث:</strong> يعود الزوج من عمله صامتاً، يمسك بهاتفه، ويتجنب الحديث المباشر.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-red-50 p-4 rounded-lg border-r-4 border-red-500">
+                                    <h4 class="font-bold text-red-700 mb-1">الإطار القديم (يولد الغضب):</h4>
+                                    <p class="text-sm">"هو يتجاهلني، لا يهتم بالبيت، ويهرب من مسؤولية الأبناء".</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg border-r-4 border-green-500">
+                                    <h4 class="font-bold text-green-700 mb-1">إعادة التأطير (المعنى):</h4>
+                                    <p class="text-sm">"هو مستنزف كلياً بعد يوم عمل شاق. صمته هو آلية دماغه للتعافي (الكهف)، وليس رفضاً لي".</p>
+                                </div>
+                            </div>
+                            <p class="bg-blue-50 p-3 rounded text-primary text-sm"><strong>النتيجة السلوكية:</strong> منحه نصف ساعة من الهدوء التام دون طلبات، مما يسرع استعادته لتوازنه ومبادرته بالحديث.</p>
+                        </div>
+                    </details>
+
+                    <!-- Case 2 -->
+                    <details class="bg-white rounded-xl shadow-sm border border-slate-200 group">
+                        <summary class="p-6 font-bold text-lg text-slate-800 hover:text-primary transition-colors flex justify-between items-center">
+                            <span>2. الموقف: عناد المراهقين ومطالبهم</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-slate-400"></i>
+                            </span>
+                        </summary>
+                        <div class="p-6 pt-0 text-slate-700 border-t border-slate-100 mt-2 space-y-4">
+                            <p><strong>الحدث:</strong> ابن مراهق يجادل والدته (المطلقة) كثيراً ويرفض توجيهاتها محاولاً فرض رأيه.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-red-50 p-4 rounded-lg border-r-4 border-red-500">
+                                    <h4 class="font-bold text-red-700 mb-1">الإطار القديم (يولد الغضب):</h4>
+                                    <p class="text-sm">"إنه قليل الأدب، يتمرد عليّ لأنني امرأة وحيدة، ويحاول كسر سلطتي".</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg border-r-4 border-green-500">
+                                    <h4 class="font-bold text-green-700 mb-1">إعادة التأطير (السياق والمعنى):</h4>
+                                    <p class="text-sm">"إنه يحاول بناء هويته المستقلة وإثبات رجولته المبكرة. العناد هنا طاقة قيادة غير موجهة".</p>
+                                </div>
+                            </div>
+                            <p class="bg-blue-50 p-3 rounded text-primary text-sm"><strong>النتيجة السلوكية:</strong> تفويضه ببعض المهام الأسرية الحقيقية (الاعتماد عليه)، لإشباع رغبته في الاستقلالية بشكل إيجابي.</p>
+                        </div>
+                    </details>
+
+                    <!-- Case 3 -->
+                    <details class="bg-white rounded-xl shadow-sm border border-slate-200 group">
+                        <summary class="p-6 font-bold text-lg text-slate-800 hover:text-primary transition-colors flex justify-between items-center">
+                            <span>3. الموقف: تدخل الحماة في إدارة المنزل</span>
+                            <span class="transition group-open:rotate-180">
+                                <i class="fa-solid fa-chevron-down text-slate-400"></i>
+                            </span>
+                        </summary>
+                        <div class="p-6 pt-0 text-slate-700 border-t border-slate-100 mt-2 space-y-4">
+                            <p><strong>الحدث:</strong> زيارة الحماة وتوجيهها لانتقادات أو نصائح مستمرة حول طريقة الطبخ أو التربية.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-red-50 p-4 rounded-lg border-r-4 border-red-500">
+                                    <h4 class="font-bold text-red-700 mb-1">الإطار القديم (يولد الغضب):</h4>
+                                    <p class="text-sm">"إنها تتدخل في خصوصياتي، تحاول السيطرة على بيتي، وتنتقص من قدراتي".</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg border-r-4 border-green-500">
+                                    <h4 class="font-bold text-green-700 mb-1">إعادة التأطير (المعنى):</h4>
+                                    <p class="text-sm">"تخشى التهميش وفقدان دورها. نصائحها طريقتها الوحيدة للشعور بالأهمية ولإظهار الاهتمام."</p>
+                                </div>
+                            </div>
+                            <p class="bg-blue-50 p-3 rounded text-primary text-sm"><strong>النتيجة السلوكية:</strong> الاستماع لحديثها بابتسامة وتقدير (لإشباع حاجتها النفسية)، دون الالتزام الحرفي بتنفيذ ما يخالف نظام الأسرة.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Training & Assessment -->
+    <section id="training" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">رابعاً وخامساً: من النظرية إلى التطبيق</h2>
+                <div class="w-24 h-1 bg-accent mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Practical Exercises -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fa-solid fa-users-gear text-primary mr-2 ml-2"></i> التدريبات العملية (في اللقاء)</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-primary mb-2">1. خريطة المثيرات (نشاط فردي):</h4>
+                            <p class="text-slate-600 text-sm">كتابة أهم 3 "أزرار" تفجر الغضب يومياً (مثل طلبات مالية مفاجئة). إدراك المثير هو نصف الحل.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-primary mb-2">2. دراسة حالة (هدى والميزانية):</h4>
+                            <p class="text-slate-600 text-sm">تحليل موقف خلاف مالي بين نمط تحليلي (الزوج) وعاطفي (الزوجة). اقتراح إعادة تأطير داخل غرف ثنائية (Breakout Rooms).</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                            <h4 class="font-bold text-primary mb-2">3. تبادل الأدوار (نشاط جماعي):</h4>
+                            <p class="text-slate-600 text-sm">تمثيل موقف برد فعل آلي "حالة البقاء" مقابل الاستجابة الواعية "الاستجابة الراشدة".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Homework & Assessment -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center"><i class="fa-solid fa-clipboard-check text-primary mr-2 ml-2"></i> الواجبات والتقييم</h3>
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 relative overflow-hidden group">
+                            <div class="absolute right-0 top-0 w-2 h-full bg-blue-400"></div>
+                            <h4 class="font-bold text-blue-900 mb-2 text-lg">يوميات الوعي (لمدة 3 أيام)</h4>
+                            <p class="text-slate-700 text-sm mb-3">تدوين موقف ضغط واحد وتسجيل: الشعور اللحظي، نوع رد الفعل (آلي أم واعي)، وهل تم تطبيق إعادة التأطير.</p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-100 relative overflow-hidden">
+                            <div class="absolute right-0 top-0 w-2 h-full bg-purple-400"></div>
+                            <h4 class="font-bold text-purple-900 mb-2 text-lg">المشروع الصغير (عدسة جديدة)</h4>
+                            <p class="text-slate-700 text-sm mb-3">اختيار سلوك مزعج لأحد الأبناء أو الزوج، وتطبيق "إعادة التأطير" عليه فعلياً.</p>
+                        </div>
+
+                        <div class="mt-8 text-center bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                            <i class="fa-brands fa-google text-4xl text-slate-300 mb-4 block"></i>
+                            <h4 class="font-bold text-slate-800 mb-2">التقييم الذاتي الأسبوعي</h4>
+                            <p class="text-sm text-slate-500 mb-6">استبيان رقمي قصير يقيس مدى نجاحك في ملاحظة نمط تفكيرك أثناء الغضب.</p>
+                            <a href="#" class="inline-block bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-md transition-colors w-full sm:w-auto">
+                                الذهاب إلى التقييم (Google Form)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t-4 border-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                
+                <!-- About -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4 border-b border-slate-700 pb-2">عن المدرب</h4>
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-16 h-16 rounded-full bg-slate-700 border-2 border-accent flex items-center justify-center text-2xl text-white shrink-0">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold">د. أمين رمضان (أمين غالب)</h5>
+                            <p class="text-sm text-slate-400">استشاري تدريب، خبير البرمجة اللغوية العصبية وأنماط التفكير (مصر - الإسكندرية).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Info -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4 border-b border-slate-700 pb-2">عن البرنامج</h4>
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        برنامج "التواصل الأسري الراشد" يهدف إلى دمج أحدث نظريات علم الأعصاب وعلوم التفكير المتقدمة (مثل نظرية هيرمان) مع أدوات تطبيقية لتمكين الأسرة العربية من إدارة الضغوط وتخطي الأزمات بوعي.
+                    </p>
+                </div>
+
+                <!-- References -->
+                <div>
+                    <h4 class="text-white text-lg font-bold mb-4 border-b border-slate-700 pb-2">المصادر والمراجع</h4>
+                    <ul class="text-sm space-y-2 text-slate-400">
+                        <li><i class="fa-solid fa-book text-accent ml-2 text-xs"></i> Neuro-Linguistic Programming (NLP) Techniques: Reframing</li>
+                        <li><i class="fa-solid fa-book text-accent ml-2 text-xs"></i> Herrmann International: Whole Brain Thinking Under Stress</li>
+                        <li><i class="fa-solid fa-book text-accent ml-2 text-xs"></i> Harvard Business Review: How to Respond Reframe and Resolve Conflicts</li>
+                        <li><i class="fa-solid fa-book text-accent ml-2 text-xs"></i> Psychology Today: Cognitive Reframing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Social Media Section -->
+            <div class="border-t border-slate-800 pt-8 pb-4">
+                <h4 class="text-center text-white text-lg font-bold mb-6">تواصل معي</h4>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:aminghaleb@gmail.com" target="_blank" title="Email" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-teal-500 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@AminRamadan" target="_blank" title="YouTube" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-red-600 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61582244285732" target="_blank" title="Facebook" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-blue-600 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/amin.ghaleb/" target="_blank" title="Instagram" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-pink-600 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@amin.ghaleb" target="_blank" title="TikTok" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-black flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://dr-amin-ramdan.blogspot.com/" target="_blank" title="Blog" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-orange-500 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-blogger-b"></i>
+                    </a>
+                    <a href="https://x.com/amin_izdehary" target="_blank" title="تويتر" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-sky-500 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/aminghaleb0871/" target="_blank" title="Pinterest" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-red-700 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </a>
+                    <a href="https://t.me/aminramadan" target="_blank" title="Telegram" class="w-12 h-12 rounded-full bg-slate-800 hover:bg-blue-500 flex items-center justify-center text-xl text-white transition-all duration-300 hover:-translate-y-1">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-slate-800 text-center text-sm text-slate-500">
+                <p>جميع الحقوق محفوظة &copy; 2026 د. أمين رمضان. تصميم وتطوير هندسي.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
